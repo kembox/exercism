@@ -1,0 +1,19 @@
+go 1.20
+
+use (
+	./animal-magic
+	./collatz-conjecture
+	./difference-of-squares
+	./expenses
+	./gigasecond
+	./hamming
+	./interest-is-interesting
+	./isogram
+	./leap
+	./luhn
+	./meteorology
+	./parsing-log-files
+	./raindrops
+	./scrabble-score
+	./the-farm/
+)
