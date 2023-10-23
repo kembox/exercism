@@ -14,7 +14,7 @@ use (
 	./meteorology
 	./parsing-log-files
 	./raindrops
-	./resistor-color
 	./scrabble-score
+	./space-age
 	./the-farm/
 )
