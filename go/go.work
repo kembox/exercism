@@ -12,6 +12,7 @@ use (
 	./leap
 	./luhn
 	./meteorology
+	./nucleotide-count
 	./parsing-log-files
 	./raindrops
 	./scrabble-score
