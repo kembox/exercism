@@ -2,8 +2,6 @@ package strand
 
 import "strings"
 
-var dna_list = [4]rune{'G', 'C', 'T', 'A'}
-
 func ToRNA(dna string) string {
 	var sb strings.Builder
 	for _, c := range dna {
