@@ -10,10 +10,12 @@ use (
 	./interest-is-interesting
 	./isogram
 	./leap
+	./luhn
 	./meteorology
 	./parsing-log-files
 	./raindrops
 	./rna-transcription
 	./scrabble-score
+	./strain
 	./the-farm/
 )
