@@ -12,6 +12,7 @@ use (
 	./leap
 	./luhn
 	./meteorology
+	./pangram
 	./parsing-log-files
 	./raindrops
 	./rna-transcription
