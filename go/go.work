@@ -15,6 +15,7 @@ use (
 	./pangram
 	./parsing-log-files
 	./raindrops
+	./reverse-string
 	./rna-transcription
 	./scrabble-score
 	./strain

@@ -2,11 +2,14 @@ package main
 
 import (
 	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
-	c := fmt.Sprintf("%c", 65)
-	fmt.Printf("%T\n", c)
-	fmt.Println(string('A' + 2))
-	fmt.Printf("%T\n", string('A'+1))
+	s := "Hello, 世界"
+	fmt.Println(utf8.RuneCountInString(s))
+	fmt.Println(len(s))
+	for i, v := range s {
+		fmt.Println(i, string(v))
+	}
 }
