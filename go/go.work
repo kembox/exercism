@@ -5,6 +5,7 @@ use (
 	./collatz-conjecture
 	./darts
 	./difference-of-squares
+	./etl
 	./expenses
 	./gigasecond
 	./hamming
