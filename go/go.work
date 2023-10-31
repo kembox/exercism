@@ -2,12 +2,14 @@ go 1.20
 
 use (
 	./animal-magic
+	./bob
 	./collatz-conjecture
 	./darts
 	./difference-of-squares
 	./etl
 	./expenses
 	./gigasecond
+	./grains
 	./hamming
 	./interest-is-interesting
 	./isogram
