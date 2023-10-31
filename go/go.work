@@ -10,7 +10,6 @@ use (
 	./interest-is-interesting
 	./isogram
 	./leap
-	./luhn
 	./meteorology
 	./parsing-log-files
 	./raindrops
