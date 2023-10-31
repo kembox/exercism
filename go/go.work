@@ -3,7 +3,9 @@ go 1.20
 use (
 	./animal-magic
 	./collatz-conjecture
+	./darts
 	./difference-of-squares
+	./etl
 	./expenses
 	./gigasecond
 	./hamming
@@ -11,8 +13,10 @@ use (
 	./isogram
 	./leap
 	./meteorology
+	./pangram
 	./parsing-log-files
 	./raindrops
+	./reverse-string
 	./rna-transcription
 	./scrabble-score
 	./strain
