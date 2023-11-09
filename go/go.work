@@ -20,6 +20,7 @@ use (
 	./raindrops
 	./reverse-string
 	./rna-transcription
+	./roman-numerals
 	./rotational-cipher
 	./scrabble-score
 	./strain
