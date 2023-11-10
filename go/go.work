@@ -12,6 +12,7 @@ use (
 	./grains
 	./hamming
 	./interest-is-interesting
+	./isbn-verifier
 	./isogram
 	./leap
 	./meteorology
