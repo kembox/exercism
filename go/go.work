@@ -19,6 +19,7 @@ use (
 	./pangram
 	./parsing-log-files
 	./raindrops
+	./resistor-color-duo
 	./reverse-string
 	./rna-transcription
 	./roman-numerals
