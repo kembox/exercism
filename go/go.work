@@ -28,4 +28,5 @@ use (
 	./scrabble-score
 	./strain
 	./the-farm/
+	./triangle
 )
