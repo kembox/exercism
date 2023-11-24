@@ -19,6 +19,7 @@ use (
 	./meteorology
 	./pangram
 	./parsing-log-files
+	./proverb
 	./raindrops
 	./resistor-color-duo
 	./reverse-string
