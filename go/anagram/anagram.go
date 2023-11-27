@@ -11,6 +11,9 @@ func mySortString(s string) string {
 	return strings.Join(sl, "")
 }
 
+//For more performant way, consider using standard library SortString
+//Just need to implement an interface type with proper method before using it
+
 func Detect(subject string, candidates []string) []string {
 	var sl []string
 	subject = strings.ToLower(subject)
