@@ -16,6 +16,7 @@ use (
 	./interest-is-interesting
 	./isbn-verifier
 	./isogram
+	./largest-series-product
 	./leap
 	./meteorology
 	./pangram
