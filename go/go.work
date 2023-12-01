@@ -19,6 +19,7 @@ use (
 	./largest-series-product
 	./leap
 	./meteorology
+	./nth-prime
 	./pangram
 	./parsing-log-files
 	./protein-translation
