@@ -3,6 +3,7 @@ go 1.20
 use (
 	./anagram
 	./animal-magic
+	./atbash-cipher
 	./bob
 	./clock
 	./collatz-conjecture
