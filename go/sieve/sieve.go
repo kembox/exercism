@@ -1,34 +1,21 @@
 package sieve
 
 func Sieve(limit int) []int {
-	var sl []int
-	for i := 2; i <= limit; i++ {
-		sl = append(sl, i)
-	}
+	composites := make([]bool, limit+1)
+	primes := make([]int, limit/2)
+	pidx := 0
 
-	// Avoid risky action that may change origin slice
-	// So better create a new slice and append instead of removing item from origin slice
-	var composite []int
-	for n, v := range sl {
-		for _, jv := range sl[n+1:] {
-			if jv%v == 0 {
-				composite = append(composite, jv)
-			}
+	for i := 2; i < limit+1; i++ {
+		if composites[i] {
+			continue
 		}
-	}
 
-	var ret []int
-	for _, v1 := range sl {
-		is_prime := 1
-		for _, v2 := range composite {
-			if v1 == v2 {
-				is_prime = 0
-				break
-			}
-		}
-		if is_prime == 1 {
-			ret = append(ret, v1)
+		primes[pidx] = i
+		pidx += 1
+
+		for j := 2 * i; j < limit+1; j += i {
+			composites[j] = true
 		}
 	}
-	return ret
+	return primes[:pidx]
 }
