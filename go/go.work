@@ -32,6 +32,7 @@ use (
 	./roman-numerals
 	./rotational-cipher
 	./scrabble-score
+	./sieve
 	./simple-cipher
 	./strain
 	./the-farm/
