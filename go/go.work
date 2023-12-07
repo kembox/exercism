@@ -24,6 +24,7 @@ use (
 	./nth-prime
 	./pangram
 	./parsing-log-files
+	./phone-number
 	./protein-translation
 	./proverb
 	./raindrops
