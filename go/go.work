@@ -26,6 +26,7 @@ use (
 	./pangram
 	./parsing-log-files
 	./phone-number
+	./prime-factors
 	./protein-translation
 	./proverb
 	./raindrops
