@@ -20,6 +20,7 @@ use (
 	./isogram
 	./largest-series-product
 	./leap
+	./list-ops
 	./meteorology
 	./nth-prime
 	./pangram
