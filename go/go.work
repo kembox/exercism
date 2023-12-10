@@ -36,8 +36,8 @@ use (
 	./roman-numerals
 	./rotational-cipher
 	./scrabble-score
+	./series
 	./sieve
-	./simple-cipher
 	./strain
 	./the-farm/
 	./triangle
