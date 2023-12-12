@@ -1,6 +1,7 @@
 go 1.20
 
 use (
+	./acronym
 	./anagram
 	./animal-magic
 	./armstrong-numbers
