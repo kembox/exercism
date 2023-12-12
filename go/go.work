@@ -39,6 +39,7 @@ use (
 	./series
 	./sieve
 	./strain
+	./sublist
 	./the-farm/
 	./triangle
 	./word-count
