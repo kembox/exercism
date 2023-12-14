@@ -42,6 +42,7 @@ use (
 	./sieve
 	./strain
 	./sublist
+	./sum-of-multiples
 	./the-farm/
 	./triangle
 	./word-count
