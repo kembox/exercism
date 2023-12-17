@@ -45,5 +45,6 @@ use (
 	./sum-of-multiples
 	./the-farm/
 	./triangle
+	./twelve-days
 	./word-count
 )
