@@ -35,6 +35,10 @@ func shift_n_wrap(r rune, s shift) rune {
 }
 func (c shift) Encode(input string) string {
 	var b strings.Builder
+	r := regexp.MustCompile(`[^a-zA-Z]`)
+	input = r.ReplaceAllString(input,"")
+	input = strings.ToLower(input)
+	//fmt.Println("input: ",input)
 	for _, v := range input {
 		b.WriteRune(shift_n_wrap(v, c))
 	}
@@ -65,12 +69,21 @@ func NewVigenere(key string) Cipher {
 }
 
 func (v vigenere) Encode(input string) string {
+	r := regexp.MustCompile(`[^a-zA-Z]`)
+	input = r.ReplaceAllString(input,"")
+	input = strings.ToLower(input)
+
 	var b strings.Builder
 	for i := 0; i < len(input); i++ {
-		b.WriteRune(shift_n_wrap(input[i], v[i]))
+		b.WriteRune(shift_n_wrap(rune(input[i]), shift(v[i])))
 	}
+	return b.String()
 }
 
 func (v vigenere) Decode(input string) string {
-	panic("Please implement the Decode function")
+	var b strings.Builder
+	for i := 0; i < len(input); i++ {
+		b.WriteRune(shift_n_wrap(rune(input[i]), shift(-v[i])))
+	}
+	return b.String()
 }
