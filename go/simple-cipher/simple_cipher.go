@@ -4,12 +4,17 @@ import (
 	"math"
 	"regexp"
 	"strings"
+	"math/rand"
+	"time"
 )
+
 
 // Define the shift and vigenere types here.
 // Both types should satisfy the Cipher interface.
 type shift int
 type vigenere []rune
+var my_rand *rand.Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
+var letterRunes = []rune("abcdefghijklmnopqrstuvwxyz")
 
 func NewCaesar() Cipher {
 	var s shift = 3
@@ -60,6 +65,10 @@ func NewVigenere(key string) Cipher {
 		return nil
 	} else if key == strings.Repeat("a", 25) {
 		return nil
+	} else if len(key) == 0 {
+		for i := 0; i < 100; i++ {
+			vig[i] = letterRunes[my_rand.Intn(len(letterRunes))]
+		}
 	} else {
 		for _, v := range key {
 			vig = append(vig, v)
