@@ -4,17 +4,12 @@ import (
 	"math"
 	"regexp"
 	"strings"
-	"math/rand"
-	"time"
 )
-
 
 // Define the shift and vigenere types here.
 // Both types should satisfy the Cipher interface.
 type shift int
 type vigenere []rune
-var my_rand *rand.Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
-var letterRunes = []rune("abcdefghijklmnopqrstuvwxyz")
 
 func NewCaesar() Cipher {
 	var s shift = 3
@@ -41,9 +36,9 @@ func shift_n_wrap(r rune, s shift) rune {
 func (c shift) Encode(input string) string {
 	var b strings.Builder
 	r := regexp.MustCompile(`[^a-zA-Z]`)
-	input = r.ReplaceAllString(input,"")
+	input = r.ReplaceAllString(input, "")
 	input = strings.ToLower(input)
-	//fmt.Println("input: ",input)
+
 	for _, v := range input {
 		b.WriteRune(shift_n_wrap(v, c))
 	}
@@ -61,14 +56,15 @@ func (c shift) Decode(input string) string {
 func NewVigenere(key string) Cipher {
 	var vig vigenere
 	r := regexp.MustCompile(`[^a-z]`)
+	only_a := regexp.MustCompile(`^a+$`)
 	if r.MatchString(key) {
 		return nil
 	} else if key == strings.Repeat("a", 25) {
 		return nil
 	} else if len(key) == 0 {
-		for i := 0; i < 100; i++ {
-			vig[i] = letterRunes[my_rand.Intn(len(letterRunes))]
-		}
+		return nil
+	} else if only_a.MatchString(key) {
+		return nil
 	} else {
 		for _, v := range key {
 			vig = append(vig, v)
@@ -79,20 +75,28 @@ func NewVigenere(key string) Cipher {
 
 func (v vigenere) Encode(input string) string {
 	r := regexp.MustCompile(`[^a-zA-Z]`)
-	input = r.ReplaceAllString(input,"")
+	input = r.ReplaceAllString(input, "")
 	input = strings.ToLower(input)
 
+	var full_key vigenere = make(vigenere, 0, len(input))
+	for i := 0; i < len(input); i++ {
+		full_key = append(full_key, v[i%len(v)])
+	}
 	var b strings.Builder
 	for i := 0; i < len(input); i++ {
-		b.WriteRune(shift_n_wrap(rune(input[i]), shift(v[i])))
+		b.WriteRune(shift_n_wrap(rune(input[i]), shift(full_key[i]-'a')))
 	}
 	return b.String()
 }
 
 func (v vigenere) Decode(input string) string {
 	var b strings.Builder
+	var full_key vigenere = make(vigenere, 0, len(input))
 	for i := 0; i < len(input); i++ {
-		b.WriteRune(shift_n_wrap(rune(input[i]), shift(-v[i])))
+		full_key = append(full_key, v[i%len(v)])
+	}
+	for i := 0; i < len(input); i++ {
+		b.WriteRune(shift_n_wrap(rune(input[i]), shift(-(full_key[i] - 'a'))))
 	}
 	return b.String()
 }
