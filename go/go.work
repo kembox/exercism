@@ -10,6 +10,7 @@ use (
 	./bottle-song
 	./clock
 	./collatz-conjecture
+	./complex-numbers
 	./darts
 	./difference-of-squares
 	./etl
