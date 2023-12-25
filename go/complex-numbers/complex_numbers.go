@@ -30,14 +30,16 @@ func (n1 Number) Subtract(n2 Number) Number {
 func (n1 Number) Multiply(n2 Number) Number {
 	return Number{n1.Real() * n2.Real() - n1.Imaginary() * n2.Imaginary(),n1.Imaginary()*n2.Real() + n1.Real() * n2.Imaginary()}
 }
-
 func (n Number) Times(factor float64) Number {
-	panic("Please implement the Times method")
+	return Number{ factor * n.real,
+		factor * n.img,
+	}
 }
 
 func (n1 Number) Divide(n2 Number) Number {
-	return Number{(n1.Real() * n2.Real() + n1.Imaginary() * n2.Imaginary())/n2.Real()*n2.Real() + n2.Imaginary()*n2.Imaginary(),
-		(n1.Imaginary()*n2.Real() - n1.Real()*n2.Imaginary())/(n2.Real()*n2.Real() + n2.Imaginary()*n2.Imaginary()),
+	divisor := math.Pow(n2.real,2) + math.Pow(n2.img,2)
+	return Number{(n1.Real() * n2.Real() + n1.Imaginary() * n2.Imaginary())/divisor,
+		(n1.Imaginary()*n2.Real() - n1.Real()*n2.Imaginary())/divisor,
 	}
 }
 
@@ -50,5 +52,9 @@ func (n Number) Abs() float64 {
 }
 
 func (n Number) Exp() Number {
-	
+	factor := math.Exp(n.real)
+	return Number{
+		factor * math.Cos(n.img),
+		factor * math.Sin(n.img),
+	}
 }
